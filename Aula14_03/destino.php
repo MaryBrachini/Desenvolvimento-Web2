@@ -26,19 +26,15 @@
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-		// Cria um array para armazenar os valores das checkboxes selecionadas
 		$checkboxes_selecionadas = array();
 
-		// Verifica se o parâmetro 'checkbox' foi enviado no formulário
 		if (isset($_POST['checkbox'])) {
 
-			// Percorre o array de checkboxes e adiciona os valores selecionados ao array $checkboxes_selecionadas
 			foreach ($_POST['checkbox'] as $checkbox_selecionada) {
 				array_push($checkboxes_selecionadas, $checkbox_selecionada);
 			}
 		}
 
-		// Exibe os valores das checkboxes selecionadas
 		echo "<p>As checkboxes selecionadas são: </p>";
 		foreach ($checkboxes_selecionadas as $checkbox_selecionada) {
 			echo $checkbox_selecionada . " ";
