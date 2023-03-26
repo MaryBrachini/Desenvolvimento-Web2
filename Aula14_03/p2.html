@@ -4,33 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Ativ28_02/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Praticando 2</title>
+    <style>
+        h1 {
+            border-bottom: solid 1px gray;
+            padding-bottom: 1%;
+            margin-bottom: 2%;
+        }
+
+        .botoes {
+            padding-top: 1%;
+        }
+
+        .espaco {
+            padding-bottom: 1%;
+        }
+
+        .contein {
+            padding-left: 4%;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Praticando 2 - Contador</h1>
-    <form action="p2.php" method="post">
-        <div class="form-body">
-            <div>
-                <label for="ini">Inicio:</label>
-                <input type="text" name="ini" id="ini">
-            </div>
-            <div>
-                <label for="fim">Final:</label>
-                <input type="text" name="fim" id="fim">
-            </div>
-            <div>
-                <label for="inc">Incremento:</label>
-                <input type="text" name="inc" id="inc">
+
+    <div class="contein">
+
+        <form action="p2.php" method="post">
+            <div class="form-body">
+                <div class="espaco">
+                    <label for="ini">Inicio:</label>
+                    <input type="text" name="ini" id="ini">
+                </div>
+                <div class="espaco">
+                    <label for="fim">Final:</label>
+                    <input type="text" name="fim" id="fim">
+                </div>
+                <div>
+                    <label for="inc">Incremento:</label>
+                    <input type="text" name="inc" id="inc">
+                </div>
             </div>
 
             <div class="botoes">
-                <button type="submit" class="botao-enviar">Calcular media</button>
-                <button type="reset" class="botao-limpar">Limpar</button>
+                <button type="submit" class="btn btn-success">Calcular media</button>
+                <button type="reset" class="btn btn-warning">Limpar</button>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+    <a type="button" class="btn btn-danger" href="/DW2/index.html">Voltar ao Menu</a>
 </body>
 
 </html>
