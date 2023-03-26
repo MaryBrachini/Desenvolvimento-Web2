@@ -17,11 +17,11 @@ require "header.php";
     <form action="destino.php" method="post">
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-5">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" class="form-control">
             </div>
-            <div class="col-sm-6">
+            <div class="col-5">
                 <label for="email">Email:</label>
                 <input type="text" name="email" class="form-control">
             </div>
