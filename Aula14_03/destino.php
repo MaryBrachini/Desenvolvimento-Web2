@@ -22,26 +22,7 @@
 
 	<h3>Interesses relacionados em ordem alfabetica</h3>
 
-	<?php
-
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-		$checkboxes_selecionadas = array();
-
-		if (isset($_POST['checkbox'])) {
-
-			foreach ($_POST['checkbox'] as $checkbox_selecionada) {
-				array_push($checkboxes_selecionadas, $checkbox_selecionada);
-			}
-		}
-
-		echo "<p>As checkboxes selecionadas são: </p>";
-		foreach ($checkboxes_selecionadas as $checkbox_selecionada) {
-			echo $checkbox_selecionada . " ";
-		}
-	}
-
-	?>
+	
 
 	<a type="button" class="btn btn-danger" href="/index.html">Voltar ao Menu</a>
 	<a type="button" class="btn btn-warning" href="p5.php">Voltar ao Formulario</a>
