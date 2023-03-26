@@ -1,7 +1,7 @@
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 
     <div class="botoes">
-        <a type="button" class="btn btn-danger" href="/dw2/index.html">Voltar ao Menu</a>
+        <a type="button" class="btn btn-danger" href="/DW2/index.html">Voltar ao Menu</a>
     </div>
 
     <br>
