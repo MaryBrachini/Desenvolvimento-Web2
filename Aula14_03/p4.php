@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <title>Praticando 4</title>
+    <style>
+        .botoes {
+            padding-top: 1%;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,9 +19,9 @@
         <h1>Praticando 4 - Gerador de tabela</h1>
 
         <?php
-        $lin = filter_input(INPUT_POST, "lin", FILTER_SANITIZE_SPECIAL_CHARS);
-        $col = filter_input(INPUT_POST, "col", FILTER_SANITIZE_SPECIAL_CHARS);
-        $est = filter_input(INPUT_POST, "esc", FILTER_SANITIZE_SPECIAL_CHARS);
+        $lin = filter_input(INPUT_GET, "lin", FILTER_SANITIZE_SPECIAL_CHARS);
+        $col = filter_input(INPUT_GET, "col", FILTER_SANITIZE_SPECIAL_CHARS);
+        $est = filter_input(INPUT_GET, "est", FILTER_SANITIZE_SPECIAL_CHARS);
 
         if ($lin == "") {
         ?>
@@ -35,12 +41,12 @@
                     <div class="col-3 my-2">
                         <label for="est">Estilo:</label>
                         <select class="form-select" name="est" id="est">
-                            <option value="" selected="est">Selecione o Estilo</option>
-                            <option value="table-primary" selected="est">table-primary</option>
-                            <option value="table-success" selected="est">table-success</option>
-                            <option value="table-danger" selected="est">table-danger</option>
-                            <option value="table-warning" selected="est">table-warning</option>
-                            <option value="table-dark" selected="est">table-dark</option>
+                            <option value="">Selecione o Estilo</option>
+                            <option value="table-primary">table-primary</option>
+                            <option value="table-success">table-success</option>
+                            <option value="table-danger">table-danger</option>
+                            <option value="table-warning">table-warning</option>
+                            <option value="table-dark">table-dark</option>
                         </select>
                     </div>
                 </div>
@@ -56,20 +62,28 @@
 
 <?php
         } elseif ($lin) {
-            echo "Tabela $col X $lin";
-            echo "<table class='table $esc'>";
-            for ($x = 0; $x > $lin; $x += 1) {
-                echo "<tr>";
-                for ($i = 0; $i > $col; $i += 1) {
+            echo "<h3>Tabela $col X $lin</h3>";
+            echo "O estilo é $est";
+
+            echo "<table class='table table-bordered'>";
+            echo "<tbody>";
+            for ($x = 1; $x <= $lin; $x += 1) {
+                echo "<tr class='$est'>";
+                for ($i = 1; $i <= $col; $i += 1) {
                     echo "<th>-</th>";
                 }
                 echo "</tr>";
             }
-
+            echo "</tbody>";
             echo "</table>";
         } ?>
+
+<div class="botoes">
+    <a type="submit" class="btn btn-success" href="p4.php">Voltar</a>
+    <a type="button" class="btn btn-danger" href="/DW2/index.html">Voltar ao Menu</a>
+</div>
 </Div>
-<a href="/index.html">Voltar ao Menu</a>
+
 </body>
 
 </html>
