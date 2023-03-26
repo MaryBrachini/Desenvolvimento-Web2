@@ -21,17 +21,10 @@ require "header.php";
 
     echo "<b>Nome informado:</b> $nome<br><br>";
     echo "<b>Email:</b> $email<br><br>";
-    echo "<b>Mensagem:</b> $msg<br>"
-    ?>
-
-    <?php
-    $file = 'teste.txt';
-    // Abre o arquivo para obter o conteúdo existente
-    $current = file_get_contents($file);
-    // Acrescenta a nova pessoa no arquivo
-    $current .= "John Smith\n";
-    // Escreve o conteúdo de volta no arquivo
-    file_put_contents($file, $current);
+    echo "<b>Mensagem:</b> $msg<br>";
+    echo "<p>Data:";
+    date('d/m/Y - h:i:s');
+    echo "</p>";
     ?>
 
     <div class="botoes">
