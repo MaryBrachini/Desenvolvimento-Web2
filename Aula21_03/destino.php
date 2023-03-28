@@ -15,16 +15,26 @@ require "header.php";
     </div>
 
     <?php
-    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
-    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
-    $msg = filter_input(INPUT_POST, "msg", FILTER_SANITIZE_SPECIAL_CHARS);
+    $nome = filter_input(INPUT_POST, "nome");
+    $email = filter_input(INPUT_POST, "email");
+    $msg = filter_input(INPUT_POST, "msg");
+    $data = date("d/m/Y - H:i:s");
 
-    echo "<b>Nome informado:</b> $nome<br><br>";
-    echo "<b>Email:</b> $email<br><br>";
-    echo "<b>Mensagem:</b> $msg<br>";
-    echo "<p>Data:";
-    date('d/m/Y - h:i:s');
-    echo "</p>";
+    echo "<p>Nome informado: " . $nome . "</p>";
+    echo "<p>Email informado: " . $email . "</p>";
+    echo "<p>Mensagem: " . $msg . "</p>";
+    echo $data;
+
+
+    $rand = rand();
+
+    if (!is_dir("contatos")) {
+        mkdir("contatos");
+    }
+
+    $fp = fopen("contatos/myText-$rand.txt", "wb");
+    fwrite($fp, $msg);
+    fclose($fp);
     ?>
 
     <div class="botoes">
